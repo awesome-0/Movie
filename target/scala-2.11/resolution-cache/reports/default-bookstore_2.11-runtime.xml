@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="default"
+		module="bookstore_2.11"
+		revision="0.1"
+		conf="runtime"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
+		date="20180809173552"/>
+	<dependencies>
+		<module organisation="com.typesafe.akka" name="akka-http-spray-json-experimental_2.11">
+			<revision name="2.4.11" status="release" pubdate="20160930183012" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="20">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3468" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-http-spray-json-experimental_2.11/ivy-2.4.11.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-http-spray-json-experimental_2.11/2.4.11/akka-http-spray-json-experimental_2.11-2.4.11.pom"/>
+				<caller organisation="default" name="bookstore_2.11" conf="compile, runtime" rev="2.4.11" rev-constraint-default="2.4.11" rev-constraint-dynamic="2.4.11" callerrev="0.1"/>
+				<artifacts>
+					<artifact name="akka-http-spray-json-experimental_2.11" type="jar" ext="jar" status="no" details="" size="24878" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-http-spray-json-experimental_2.11/jars/akka-http-spray-json-experimental_2.11-2.4.11.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-http-spray-json-experimental_2.11/2.4.11/akka-http-spray-json-experimental_2.11-2.4.11.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-json_2.11">
+			<revision name="1.3.2" status="release" pubdate="20150506150115" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spray/spray-json" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="22">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3083" time="0" location="/home/perfection/.ivy2/cache/io.spray/spray-json_2.11/ivy-1.3.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/spray/spray-json_2.11/1.3.2/spray-json_2.11-1.3.2.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-http-spray-json-experimental_2.11" conf="default, compile, runtime, master" rev="1.3.2" rev-constraint-default="1.3.2" rev-constraint-dynamic="1.3.2" callerrev="2.4.11"/>
+				<artifacts>
+					<artifact name="spray-json_2.11" type="bundle" ext="jar" status="no" details="" size="286389" time="0" location="/home/perfection/.ivy2/cache/io.spray/spray-json_2.11/bundles/spray-json_2.11-1.3.2.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/spray/spray-json_2.11/1.3.2/spray-json_2.11-1.3.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-http-experimental_2.11">
+			<revision name="2.4.11" status="release" pubdate="20160930182948" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="21">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3296" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-http-experimental_2.11/ivy-2.4.11.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-http-experimental_2.11/2.4.11/akka-http-experimental_2.11-2.4.11.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-http-spray-json-experimental_2.11" conf="default, compile, runtime, master" rev="2.4.11" rev-constraint-default="2.4.11" rev-constraint-dynamic="2.4.11" callerrev="2.4.11"/>
+				<artifacts>
+					<artifact name="akka-http-experimental_2.11" type="jar" ext="jar" status="no" details="" size="2706653" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-http-experimental_2.11/jars/akka-http-experimental_2.11-2.4.11.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-http-experimental_2.11/2.4.11/akka-http-experimental_2.11-2.4.11.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-slf4j_2.11">
+			<revision name="2.4.11" status="release" pubdate="20160930182740" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="18">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3202" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/ivy-2.4.11.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-slf4j_2.11/2.4.11/akka-slf4j_2.11-2.4.11.pom"/>
+				<caller organisation="default" name="bookstore_2.11" conf="compile, runtime" rev="2.4.11" rev-constraint-default="2.4.11" rev-constraint-dynamic="2.4.11" callerrev="0.1"/>
+				<artifacts>
+					<artifact name="akka-slf4j_2.11" type="jar" ext="jar" status="no" details="" size="18202" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-slf4j_2.11/jars/akka-slf4j_2.11-2.4.11.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-slf4j_2.11/2.4.11/akka-slf4j_2.11-2.4.11.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.slf4j" name="slf4j-api">
+			<revision name="1.7.16" status="release" pubdate="20160211212603" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="19">
+				<license name="MIT License" url="http://www.opensource.org/licenses/mit-license.php"/>
+				<metadata-artifact status="no" details="" size="5199" time="0" location="/home/perfection/.ivy2/cache/org.slf4j/slf4j-api/ivy-1.7.16.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.16/slf4j-api-1.7.16.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-slf4j_2.11" conf="default, compile, runtime, master" rev="1.7.16" rev-constraint-default="1.7.16" rev-constraint-dynamic="1.7.16" callerrev="2.4.11"/>
+				<artifacts>
+					<artifact name="slf4j-api" type="jar" ext="jar" status="no" details="" size="40509" time="0" location="/home/perfection/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.16.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.16/slf4j-api-1.7.16.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-cluster_2.11">
+			<revision name="2.5.13" status="release" pubdate="20180528150310" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" extra-info.apiURL="http://doc.akka.io/api/akka/2.5.13" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="12">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3456" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-cluster_2.11/ivy-2.5.13.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-cluster_2.11/2.5.13/akka-cluster_2.11-2.5.13.pom"/>
+				<caller organisation="default" name="bookstore_2.11" conf="compile, runtime" rev="2.5.13" rev-constraint-default="2.5.13" rev-constraint-dynamic="2.5.13" callerrev="0.1"/>
+				<artifacts>
+					<artifact name="akka-cluster_2.11" type="jar" ext="jar" status="no" details="" size="1193536" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-cluster_2.11/jars/akka-cluster_2.11-2.5.13.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-cluster_2.11/2.5.13/akka-cluster_2.11-2.5.13.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-remote_2.11">
+			<revision name="2.5.13" status="release" pubdate="20180528145815" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" extra-info.apiURL="http://doc.akka.io/api/akka/2.5.13" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="13">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="4429" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-remote_2.11/ivy-2.5.13.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-remote_2.11/2.5.13/akka-remote_2.11-2.5.13.pom"/>
+				<caller organisation="default" name="bookstore_2.11" conf="compile, runtime" rev="2.5.13" rev-constraint-default="2.5.13" rev-constraint-dynamic="2.5.13" callerrev="0.1"/>
+				<caller organisation="com.typesafe.akka" name="akka-cluster_2.11" conf="default, compile, runtime, master" rev="2.5.13" rev-constraint-default="2.5.13" rev-constraint-dynamic="2.5.13" callerrev="2.5.13"/>
+				<artifacts>
+					<artifact name="akka-remote_2.11" type="jar" ext="jar" status="no" details="" size="2825595" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-remote_2.11/jars/akka-remote_2.11-2.5.13.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-remote_2.11/2.5.13/akka-remote_2.11-2.5.13.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.aeron" name="aeron-driver">
+			<revision name="1.9.1" status="release" pubdate="20180429150836" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/real-logic/aeron" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="15">
+				<license name="The Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3071" time="0" location="/home/perfection/.ivy2/cache/io.aeron/aeron-driver/ivy-1.9.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/aeron/aeron-driver/1.9.1/aeron-driver-1.9.1.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-remote_2.11" conf="compile, runtime" rev="1.9.1" rev-constraint-default="1.9.1" rev-constraint-dynamic="1.9.1" callerrev="2.5.13"/>
+				<artifacts>
+					<artifact name="aeron-driver" type="jar" ext="jar" status="no" details="" size="235553" time="0" location="/home/perfection/.ivy2/cache/io.aeron/aeron-driver/jars/aeron-driver-1.9.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/aeron/aeron-driver/1.9.1/aeron-driver-1.9.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.aeron" name="aeron-client">
+			<revision name="1.9.1" status="release" pubdate="20180429150807" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/real-logic/aeron" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="16">
+				<license name="The Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3068" time="0" location="/home/perfection/.ivy2/cache/io.aeron/aeron-client/ivy-1.9.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/aeron/aeron-client/1.9.1/aeron-client-1.9.1.pom"/>
+				<caller organisation="io.aeron" name="aeron-driver" conf="compile, runtime" rev="1.9.1" rev-constraint-default="1.9.1" rev-constraint-dynamic="1.9.1" callerrev="1.9.1"/>
+				<caller organisation="com.typesafe.akka" name="akka-remote_2.11" conf="compile, runtime" rev="1.9.1" rev-constraint-default="1.9.1" rev-constraint-dynamic="1.9.1" callerrev="2.5.13"/>
+				<artifacts>
+					<artifact name="aeron-client" type="jar" ext="jar" status="no" details="" size="135402" time="0" location="/home/perfection/.ivy2/cache/io.aeron/aeron-client/jars/aeron-client-1.9.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/aeron/aeron-client/1.9.1/aeron-client-1.9.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.agrona" name="agrona">
+			<revision name="0.9.17" status="release" pubdate="20180429144653" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/real-logic/agrona" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="17">
+				<license name="The Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3026" time="0" location="/home/perfection/.ivy2/cache/org.agrona/agrona/ivy-0.9.17.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/agrona/agrona/0.9.17/agrona-0.9.17.pom"/>
+				<caller organisation="io.aeron" name="aeron-client" conf="compile, runtime" rev="0.9.17" rev-constraint-default="0.9.17" rev-constraint-dynamic="0.9.17" callerrev="1.9.1"/>
+				<artifacts>
+					<artifact name="agrona" type="jar" ext="jar" status="no" details="" size="365885" time="0" location="/home/perfection/.ivy2/cache/org.agrona/agrona/jars/agrona-0.9.17.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/agrona/agrona/0.9.17/agrona-0.9.17.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.netty" name="netty">
+			<revision name="3.10.6.Final" status="release" pubdate="20160629134528" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://netty.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="14">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="7197" time="0" location="/home/perfection/.ivy2/cache/io.netty/netty/ivy-3.10.6.Final.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/netty/netty/3.10.6.Final/netty-3.10.6.Final.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-remote_2.11" conf="compile, runtime" rev="3.10.6.Final" rev-constraint-default="3.10.6.Final" rev-constraint-dynamic="3.10.6.Final" callerrev="2.5.13"/>
+				<artifacts>
+					<artifact name="netty" type="bundle" ext="jar" status="no" details="" size="1292696" time="0" location="/home/perfection/.ivy2/cache/io.netty/netty/bundles/netty-3.10.6.Final.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/netty/netty/3.10.6.Final/netty-3.10.6.Final.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-http_2.11">
+			<revision name="10.1.3" status="release" pubdate="20180615145709" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://akka.io" extra-info.apiURL="http://doc.akka.io/api/akka-http/10.1.3/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="9">
+				<license name="Apache-2.0" url="https://opensource.org/licenses/Apache-2.0"/>
+				<metadata-artifact status="no" details="" size="3107" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-http_2.11/ivy-10.1.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-http_2.11/10.1.3/akka-http_2.11-10.1.3.pom"/>
+				<caller organisation="default" name="bookstore_2.11" conf="compile, runtime" rev="10.1.3" rev-constraint-default="10.1.3" rev-constraint-dynamic="10.1.3" callerrev="0.1"/>
+				<artifacts>
+					<artifact name="akka-http_2.11" type="jar" ext="jar" status="no" details="" size="2918065" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-http_2.11/jars/akka-http_2.11-10.1.3.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-http_2.11/10.1.3/akka-http_2.11-10.1.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-http-core_2.11">
+			<revision name="10.1.3" status="release" pubdate="20180615145628" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://akka.io" extra-info.apiURL="http://doc.akka.io/api/akka-http/10.1.3/" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="10">
+				<license name="Apache-2.0" url="https://opensource.org/licenses/Apache-2.0"/>
+				<metadata-artifact status="no" details="" size="3731" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-http-core_2.11/ivy-10.1.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-http-core_2.11/10.1.3/akka-http-core_2.11-10.1.3.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-http_2.11" conf="default, compile, runtime, master" rev="10.1.3" rev-constraint-default="10.1.3" rev-constraint-dynamic="10.1.3" callerrev="10.1.3"/>
+				<caller organisation="default" name="bookstore_2.11" conf="compile, runtime" rev="10.1.3" rev-constraint-default="10.1.3" rev-constraint-dynamic="10.1.3" callerrev="0.1"/>
+				<caller organisation="com.typesafe.akka" name="akka-http-experimental_2.11" conf="compile, runtime" rev="2.4.11" rev-constraint-default="2.4.11" rev-constraint-dynamic="2.4.11" callerrev="2.4.11"/>
+				<artifacts>
+					<artifact name="akka-http-core_2.11" type="jar" ext="jar" status="no" details="" size="4041278" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-http-core_2.11/jars/akka-http-core_2.11-10.1.3.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-http-core_2.11/10.1.3/akka-http-core_2.11-10.1.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="2.4.11" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+				<evicted-by rev="10.1.3"/>
+				<caller organisation="com.typesafe.akka" name="akka-http-experimental_2.11" conf="compile, runtime" rev="2.4.11" rev-constraint-default="2.4.11" rev-constraint-dynamic="2.4.11" callerrev="2.4.11"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-parsing_2.11">
+			<revision name="10.1.3" status="release" pubdate="20180615145942" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://akka.io" extra-info.apiURL="http://doc.akka.io/api/akka-http/10.1.3/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="11">
+				<license name="Apache-2.0" url="https://opensource.org/licenses/Apache-2.0"/>
+				<metadata-artifact status="no" details="" size="3111" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-parsing_2.11/ivy-10.1.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-parsing_2.11/10.1.3/akka-parsing_2.11-10.1.3.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-http-core_2.11" conf="compile, runtime" rev="10.1.3" rev-constraint-default="10.1.3" rev-constraint-dynamic="10.1.3" callerrev="10.1.3"/>
+				<artifacts>
+					<artifact name="akka-parsing_2.11" type="jar" ext="jar" status="no" details="" size="992258" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-parsing_2.11/jars/akka-parsing_2.11-10.1.3.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-parsing_2.11/10.1.3/akka-parsing_2.11-10.1.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-stream_2.11">
+			<revision name="2.5.13" status="release" pubdate="20180528145457" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" extra-info.apiURL="http://doc.akka.io/api/akka/2.5.13" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="4">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3540" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-stream_2.11/ivy-2.5.13.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-stream_2.11/2.5.13/akka-stream_2.11-2.5.13.pom"/>
+				<caller organisation="default" name="bookstore_2.11" conf="compile, runtime" rev="2.5.13" rev-constraint-default="2.5.13" rev-constraint-dynamic="2.5.13" callerrev="0.1"/>
+				<caller organisation="com.typesafe.akka" name="akka-remote_2.11" conf="compile, runtime" rev="2.5.13" rev-constraint-default="2.5.13" rev-constraint-dynamic="2.5.13" callerrev="2.5.13"/>
+				<artifacts>
+					<artifact name="akka-stream_2.11" type="jar" ext="jar" status="no" details="" size="4944740" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-stream_2.11/jars/akka-stream_2.11-2.5.13.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-stream_2.11/2.5.13/akka-stream_2.11-2.5.13.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe" name="ssl-config-core_2.11">
+			<revision name="0.2.3" status="release" pubdate="20180327173005" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/lightbend/ssl-config" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="7">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3727" time="0" location="/home/perfection/.ivy2/cache/com.typesafe/ssl-config-core_2.11/ivy-0.2.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/ssl-config-core_2.11/0.2.3/ssl-config-core_2.11-0.2.3.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-stream_2.11" conf="default, compile, runtime, master" rev="0.2.3" rev-constraint-default="0.2.3" rev-constraint-dynamic="0.2.3" callerrev="2.5.13"/>
+				<artifacts>
+					<artifact name="ssl-config-core_2.11" type="bundle" ext="jar" status="no" details="" size="365399" time="0" location="/home/perfection/.ivy2/cache/com.typesafe/ssl-config-core_2.11/bundles/ssl-config-core_2.11-0.2.3.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/ssl-config-core_2.11/0.2.3/ssl-config-core_2.11-0.2.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang.modules" name="scala-parser-combinators_2.11">
+			<revision name="1.1.0" status="release" pubdate="20180201220938" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="8">
+				<license name="BSD 3-clause" url="http://opensource.org/licenses/BSD-3-Clause"/>
+				<metadata-artifact status="no" details="" size="2930" time="0" location="/home/perfection/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/ivy-1.1.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.11/1.1.0/scala-parser-combinators_2.11-1.1.0.pom"/>
+				<caller organisation="com.typesafe" name="ssl-config-core_2.11" conf="compile, runtime" rev="1.1.0" rev-constraint-default="1.1.0" rev-constraint-dynamic="1.1.0" callerrev="0.2.3"/>
+				<artifacts>
+					<artifact name="scala-parser-combinators_2.11" type="bundle" ext="jar" status="no" details="" size="471925" time="0" location="/home/perfection/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.1.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.11/1.1.0/scala-parser-combinators_2.11-1.1.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.reactivestreams" name="reactive-streams">
+			<revision name="1.0.2" status="release" pubdate="20171218210638" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.reactive-streams.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="6">
+				<license name="CC0" url="http://creativecommons.org/publicdomain/zero/1.0/"/>
+				<metadata-artifact status="no" details="" size="2523" time="0" location="/home/perfection/.ivy2/cache/org.reactivestreams/reactive-streams/ivy-1.0.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.2/reactive-streams-1.0.2.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-stream_2.11" conf="default, compile, runtime, master" rev="1.0.2" rev-constraint-default="1.0.2" rev-constraint-dynamic="1.0.2" callerrev="2.5.13"/>
+				<artifacts>
+					<artifact name="reactive-streams" type="jar" ext="jar" status="no" details="" size="2097" time="0" location="/home/perfection/.ivy2/cache/org.reactivestreams/reactive-streams/jars/reactive-streams-1.0.2.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.2/reactive-streams-1.0.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-protobuf_2.11">
+			<revision name="2.5.13" status="release" pubdate="20180528144808" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" extra-info.apiURL="http://doc.akka.io/api/akka/2.5.13" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="5">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2811" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-protobuf_2.11/ivy-2.5.13.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-protobuf_2.11/2.5.13/akka-protobuf_2.11-2.5.13.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-remote_2.11" conf="compile, runtime" rev="2.5.13" rev-constraint-default="2.5.13" rev-constraint-dynamic="2.5.13" callerrev="2.5.13"/>
+				<caller organisation="com.typesafe.akka" name="akka-stream_2.11" conf="default, compile, runtime, master" rev="2.5.13" rev-constraint-default="2.5.13" rev-constraint-dynamic="2.5.13" callerrev="2.5.13"/>
+				<artifacts>
+					<artifact name="akka-protobuf_2.11" type="jar" ext="jar" status="no" details="" size="484785" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-protobuf_2.11/jars/akka-protobuf_2.11-2.5.13.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-protobuf_2.11/2.5.13/akka-protobuf_2.11-2.5.13.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-actor_2.11">
+			<revision name="2.5.13" status="release" pubdate="20180528144748" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" extra-info.apiURL="http://doc.akka.io/api/akka/2.5.13" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="1">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3103" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/ivy-2.5.13.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.5.13/akka-actor_2.11-2.5.13.pom"/>
+				<caller organisation="default" name="bookstore_2.11" conf="compile, runtime" rev="2.5.13" rev-constraint-default="2.5.13" rev-constraint-dynamic="2.5.13" callerrev="0.1"/>
+				<caller organisation="com.typesafe.akka" name="akka-remote_2.11" conf="compile, runtime" rev="2.5.13" rev-constraint-default="2.5.13" rev-constraint-dynamic="2.5.13" callerrev="2.5.13"/>
+				<caller organisation="com.typesafe.akka" name="akka-slf4j_2.11" conf="default, compile, runtime, master" rev="2.4.11" rev-constraint-default="2.4.11" rev-constraint-dynamic="2.4.11" callerrev="2.4.11"/>
+				<caller organisation="com.typesafe.akka" name="akka-stream_2.11" conf="default, compile, runtime, master" rev="2.5.13" rev-constraint-default="2.5.13" rev-constraint-dynamic="2.5.13" callerrev="2.5.13"/>
+				<artifacts>
+					<artifact name="akka-actor_2.11" type="jar" ext="jar" status="no" details="" size="3673938" time="0" location="/home/perfection/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.5.13.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.5.13/akka-actor_2.11-2.5.13.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="2.4.11" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+				<evicted-by rev="2.5.13"/>
+				<caller organisation="com.typesafe.akka" name="akka-slf4j_2.11" conf="default, compile, runtime, master" rev="2.4.11" rev-constraint-default="2.4.11" rev-constraint-dynamic="2.4.11" callerrev="2.4.11"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang.modules" name="scala-java8-compat_2.11">
+			<revision name="0.7.0" status="release" pubdate="20150831120233" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="3">
+				<license name="BSD 3-clause" url="http://opensource.org/licenses/BSD-3-Clause"/>
+				<metadata-artifact status="no" details="" size="3036" time="0" location="/home/perfection/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.11/ivy-0.7.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-java8-compat_2.11/0.7.0/scala-java8-compat_2.11-0.7.0.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-actor_2.11" conf="default, compile, runtime, master" rev="0.7.0" rev-constraint-default="0.7.0" rev-constraint-dynamic="0.7.0" callerrev="2.5.13"/>
+				<artifacts>
+					<artifact name="scala-java8-compat_2.11" type="bundle" ext="jar" status="no" details="" size="582358" time="0" location="/home/perfection/.ivy2/cache/org.scala-lang.modules/scala-java8-compat_2.11/bundles/scala-java8-compat_2.11-0.7.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-java8-compat_2.11/0.7.0/scala-java8-compat_2.11-0.7.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe" name="config">
+			<revision name="1.3.2" status="release" pubdate="20171006150218" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typesafehub/config" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="2">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2875" time="0" location="/home/perfection/.ivy2/cache/com.typesafe/config/ivy-1.3.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/typesafe/config/1.3.2/config-1.3.2.pom"/>
+				<caller organisation="com.typesafe.akka" name="akka-actor_2.11" conf="default, compile, runtime, master" rev="1.3.2" rev-constraint-default="1.3.2" rev-constraint-dynamic="1.3.2" callerrev="2.5.13"/>
+				<caller organisation="com.typesafe" name="ssl-config-core_2.11" conf="compile, runtime" rev="1.2.0" rev-constraint-default="1.2.0" rev-constraint-dynamic="1.2.0" callerrev="0.2.3"/>
+				<artifacts>
+					<artifact name="config" type="bundle" ext="jar" status="no" details="" size="286020" time="0" location="/home/perfection/.ivy2/cache/com.typesafe/config/bundles/config-1.3.2.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/typesafe/config/1.3.2/config-1.3.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="1.2.0" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+				<evicted-by rev="1.3.2"/>
+				<caller organisation="com.typesafe" name="ssl-config-core_2.11" conf="compile, runtime" rev="1.2.0" rev-constraint-default="1.2.0" rev-constraint-dynamic="1.2.0" callerrev="0.2.3"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="2.11.12" status="release" pubdate="20171103023730" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.12/" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="0">
+				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
+				<metadata-artifact status="no" details="" size="2656" time="0" location="/home/perfection/.ivy2/cache/org.scala-lang/scala-library/ivy-2.11.12.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.12/scala-library-2.11.12.pom"/>
+				<caller organisation="default" name="bookstore_2.11" conf="compile, runtime" rev="2.11.12" rev-constraint-default="2.11.12" rev-constraint-dynamic="2.11.12" callerrev="0.1"/>
+				<caller organisation="com.typesafe.akka" name="akka-slf4j_2.11" conf="default, compile, runtime, master" rev="2.11.12" rev-constraint-default="2.11.12" rev-constraint-dynamic="2.11.12" callerrev="2.4.11"/>
+				<caller organisation="org.scala-lang.modules" name="scala-java8-compat_2.11" conf="compile, runtime" rev="2.11.12" rev-constraint-default="2.11.12" rev-constraint-dynamic="2.11.12" callerrev="0.7.0"/>
+				<caller organisation="com.typesafe.akka" name="akka-http-experimental_2.11" conf="compile, runtime" rev="2.11.12" rev-constraint-default="2.11.12" rev-constraint-dynamic="2.11.12" callerrev="2.4.11"/>
+				<caller organisation="io.spray" name="spray-json_2.11" conf="compile, runtime" rev="2.11.12" rev-constraint-default="2.11.12" rev-constraint-dynamic="2.11.12" callerrev="1.3.2"/>
+				<caller organisation="com.typesafe.akka" name="akka-cluster_2.11" conf="default, compile, runtime, master" rev="2.11.12" rev-constraint-default="2.11.12" rev-constraint-dynamic="2.11.12" callerrev="2.5.13"/>
+				<caller organisation="com.typesafe" name="ssl-config-core_2.11" conf="compile, runtime" rev="2.11.12" rev-constraint-default="2.11.12" rev-constraint-dynamic="2.11.12" callerrev="0.2.3"/>
+				<caller organisation="com.typesafe.akka" name="akka-protobuf_2.11" conf="compile, runtime" rev="2.11.12" rev-constraint-default="2.11.12" rev-constraint-dynamic="2.11.12" callerrev="2.5.13"/>
+				<caller organisation="com.typesafe.akka" name="akka-http_2.11" conf="default, compile, runtime, master" rev="2.11.12" rev-constraint-default="2.11.12" rev-constraint-dynamic="2.11.12" callerrev="10.1.3"/>
+				<caller organisation="com.typesafe.akka" name="akka-actor_2.11" conf="default, compile, runtime, master" rev="2.11.12" rev-constraint-default="2.11.12" rev-constraint-dynamic="2.11.12" callerrev="2.5.13"/>
+				<caller organisation="com.typesafe.akka" name="akka-remote_2.11" conf="compile, runtime" rev="2.11.12" rev-constraint-default="2.11.12" rev-constraint-dynamic="2.11.12" callerrev="2.5.13"/>
+				<caller organisation="com.typesafe.akka" name="akka-parsing_2.11" conf="compile, runtime" rev="2.11.12" rev-constraint-default="2.11.12" rev-constraint-dynamic="2.11.12" callerrev="10.1.3"/>
+				<caller organisation="org.scala-lang.modules" name="scala-parser-combinators_2.11" conf="compile, runtime" rev="2.11.12" rev-constraint-default="2.11.12" rev-constraint-dynamic="2.11.12" callerrev="1.1.0"/>
+				<caller organisation="com.typesafe.akka" name="akka-http-spray-json-experimental_2.11" conf="default, compile, runtime, master" rev="2.11.12" rev-constraint-default="2.11.12" rev-constraint-dynamic="2.11.12" callerrev="2.4.11"/>
+				<caller organisation="com.typesafe.akka" name="akka-http-core_2.11" conf="compile, runtime" rev="2.11.12" rev-constraint-default="2.11.12" rev-constraint-dynamic="2.11.12" callerrev="10.1.3"/>
+				<caller organisation="com.typesafe.akka" name="akka-stream_2.11" conf="default, compile, runtime, master" rev="2.11.12" rev-constraint-default="2.11.12" rev-constraint-dynamic="2.11.12" callerrev="2.5.13"/>
+				<artifacts>
+					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="5749423" time="0" location="/home/perfection/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.12.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.12/scala-library-2.11.12.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>
