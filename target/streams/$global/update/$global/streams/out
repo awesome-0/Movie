@@ -604,7 +604,7 @@
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.11.12 {scala-tool=[default, optional(default)]} => dependency: org.scala-lang#scala-compiler;2.11.12 {scala-tool=[default, optional(default)]}
 [debug] dependency descriptor has been mediated: MergedDescriptors(dependency: org.scala-lang#scala-library;2.11.12 {scala-tool=[default, optional(default)]},dependency: org.scala-lang#scala-library;2.11.12 {compile=[default(compile)]}) => dependency: org.scala-lang#scala-library;2.11.12 {scala-tool=[default, optional(default)], compile=[default(compile)]}
 [info] Resolving com.typesafe.akka#akka-http-spray-json-experimental_2.11;2.4.11 ...
-[debug] sbt-chain: Checking cache for: MergedDescriptors(dependency: com.typesafe.akka#akka-http-spray-json-experimental_2.11;2.4.11 {compile=[default(compile)]},dependency: com.typesafe.akka#akka-http-spray-json-experimental_2.11;2.4.11 {compile=[default(compile)]})
+[debug] sbt-chain: Checking cache for: dependency: com.typesafe.akka#akka-http-spray-json-experimental_2.11;2.4.11 {compile=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: com.typesafe.akka#akka-http-spray-json-experimental_2.11;2.4.11
 [debug] 	found com.typesafe.akka#akka-http-spray-json-experimental_2.11;2.4.11 in sbt-chain
 [debug] == resolving dependencies default#bookstore_2.11;0.1->com.typesafe.akka#akka-http-spray-json-experimental_2.11;2.4.11 [compile->runtime]
@@ -4389,7 +4389,7 @@
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.5!scala-xml_2.11.jar(bundle)
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.11;1.0.4!scala-parser-combinators_2.11.jar(bundle)
 [debug] 	[NOT REQUIRED] jline#jline;2.14.3!jline.jar
-[debug] :: resolution report :: resolve 3356ms :: artifacts dl 77ms
+[debug] :: resolution report :: resolve 3232ms :: artifacts dl 64ms
 [debug] 	report for default#bookstore_2.11;0.1 compile produced in /home/perfection/Desktop/Scala/bookstore/target/scala-2.11/resolution-cache/reports/default-bookstore_2.11-compile.xml
 [debug] 	report for default#bookstore_2.11;0.1 runtime produced in /home/perfection/Desktop/Scala/bookstore/target/scala-2.11/resolution-cache/reports/default-bookstore_2.11-runtime.xml
 [debug] 	report for default#bookstore_2.11;0.1 test produced in /home/perfection/Desktop/Scala/bookstore/target/scala-2.11/resolution-cache/reports/default-bookstore_2.11-test.xml
@@ -4403,7 +4403,7 @@
 [debug] 	report for default#bookstore_2.11;0.1 docs produced in /home/perfection/Desktop/Scala/bookstore/target/scala-2.11/resolution-cache/reports/default-bookstore_2.11-docs.xml
 [debug] 	report for default#bookstore_2.11;0.1 pom produced in /home/perfection/Desktop/Scala/bookstore/target/scala-2.11/resolution-cache/reports/default-bookstore_2.11-pom.xml
 [debug] 	report for default#bookstore_2.11;0.1 scala-tool produced in /home/perfection/Desktop/Scala/bookstore/target/scala-2.11/resolution-cache/reports/default-bookstore_2.11-scala-tool.xml
-[debug] 	resolve done (3356ms resolve - 77ms download)
+[debug] 	resolve done (3232ms resolve - 64ms download)
 [info] Done updating.
 [warn] Found version conflict(s) in library dependencies; some are suspected to be binary incompatible:
 [warn] 

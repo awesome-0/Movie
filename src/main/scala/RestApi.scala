@@ -1,11 +1,122 @@
 import BoxOffice._
-import akka.actor.ActorRef
+import TicketSeller.{Ticket, Tickets}
+import akka.actor.{ActorRef, ActorSystem, Props}
 import akka.util.Timeout
 import akka.pattern.{ask, pipe}
+import akka.http.scaladsl.model._
+import akka.http.scaladsl.server.Directives._
+import akka.http.scaladsl.server._
+import spray.json.RootJsonFormat
+//import spray.json.DefaultJsonProtocol
+import spray.json.DefaultJsonProtocol._
+
 
 import scala.concurrent.ExecutionContext
 
-class RestApi {
+class RestApi (system: ActorSystem, timeout: Timeout) extends RestRoutes {
+
+
+   implicit def executionContext: ExecutionContext = system.dispatcher
+
+   implicit def requestTimeout: Timeout = timeout
+  override def createBoxOffice(): ActorRef = system.actorOf(BoxOffice.props,BoxOffice.name)
+}
+
+
+trait RestRoutes extends BoxOfficeApi
+  with EventMarshalling{
+
+  def routes: Route = eventsRoute
+  // implicit val eventMarshall: RootJsonFormat[Events] = jsonFormat1(BoxOffice.Events)
+
+//  def eventsRoute = {
+//    pathPrefix("events"){
+//      pathEndOrSingleSlash{
+//        get{
+//          //corresponds to GET /events
+//          onSuccess(getEvents()){
+///           events => {
+//           // case Som
+//            //complete(HttpResponse(StatusCodes.OK,entity = HttpEntity(ContentTypes.`application/json`,events)))
+//              complete(events)
+//            case events => complete(events)
+//            case _ => complete(StatusCodes.NotFound)
+//
+//          }
+//          }
+//        }
+//      }
+//    }
+
+  def eventsRoute = get {
+      path("events") {
+      onSuccess(getEvents()){
+        case events => complete(events)
+        case _ => complete(StatusCodes.NotFound)
+      }
+    }
+  }
+
+  /*
+  def eventsRoute =
+    pathPrefix("events") {
+      pathEndOrSingleSlash {
+        get {
+          // GET /events
+          onSuccess(getEvents()) { events =>
+            complete(OK, events)
+          }
+        }
+      }
+    }
+
+  def eventRoute =
+    pathPrefix("events" / Segment) { event =>
+      pathEndOrSingleSlash {
+        post {
+          // POST /events/:event
+          entity(as[EventDescription]) { ed =>
+            onSuccess(createEvent(event, ed.tickets)) {
+              case BoxOffice.EventCreated(event) => complete(Created, event)
+              case BoxOffice.EventExists =>
+                val err = Error(s"$event event exists already.")
+                complete(BadRequest, err)
+            }
+          }
+        } ~
+        get {
+          // GET /events/:event
+          onSuccess(getEvent(event)) {
+            _.fold(complete(NotFound))(e => complete(OK, e))
+          }
+        } ~
+        delete {
+          // DELETE /events/:event
+          onSuccess(cancelEvent(event)) {
+            _.fold(complete(NotFound))(e => complete(OK, e))
+          }
+        }
+      }
+    }
+
+
+
+  def ticketsRoute =
+    pathPrefix("events" / Segment / "tickets") { event =>
+      post {
+        pathEndOrSingleSlash {
+          // POST /events/:event/tickets
+          entity(as[TicketRequest]) { request =>
+            onSuccess(requestTickets(event, request.tickets)) { tickets =>
+              if(tickets.entries.isEmpty) complete(NotFound)
+              else complete(Created, tickets)
+            }
+          }
+        }
+      }
+    }
+   */
+
 
 }
 
@@ -25,11 +136,19 @@ trait BoxOfficeApi{
   }
 
   def getEvents() = {
-    (boxOffice ? GetEvents ).mapTo[EventResponse]
+    (boxOffice ? GetEvents ).mapTo[Events]
   }
 
   def getEvent(event : String) = {
     (boxOffice ? GetEvent(event)).mapTo[Option[Event]]
+  }
+
+  def cancelEvent(event : String) = {
+    (boxOffice ? CancelEvent(event)).mapTo[Option[Event]]
+  }
+
+  def requestTickets(event : String, nrTickets : Int) = {
+    (boxOffice ? GetTicketsforEvent(event,nrTickets)).mapTo[Option[TicketSeller.Tickets]]
   }
 
 

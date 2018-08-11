@@ -1,14 +1,14 @@
 import java.util.concurrent.TimeUnit
 
-import TicketSeller.GetEvent
+
 import akka.actor.{Actor, ActorRef, Props}
 import akka.util.Timeout
+import scala.concurrent.ExecutionContext.Implicits.global
 
 import scala.concurrent.Future
 
 class BoxOffice extends Actor{
   import BoxOffice._
-  import TicketSeller._
   import akka.pattern.{ask,pipe}
   import akka.util.Timeout
   implicit val timeout = Timeout(5.toLong,TimeUnit.SECONDS)
@@ -16,16 +16,16 @@ class BoxOffice extends Actor{
   def createTicketSeller(event : String) = context.actorOf(TicketSeller.props(event))
 
   def receive = {
-    case CreateEvent(name,tickets) => {
+    case CreateEvent(name,ticks) => {
       def create() = {
         //let us first create a ticket seller
 
         val ticketSeller = createTicketSeller(name)
-        val tickets = (1 to tickets).map{
-          ticketId => Ticket(ticketId)
+        val tickets = (1 to ticks).map{
+          ticketId => TicketSeller.Ticket(ticketId)
         }.toVector
 
-        ticketSeller ! Add(tickets)
+        ticketSeller ! TicketSeller.Add(tickets)
         sender() ! EventCreated
       }
       /*
@@ -47,9 +47,9 @@ class BoxOffice extends Actor{
     }
 
     case GetTicketsforEvent(event,tickets) => {
-      def notFound() = sender() ! Tickets(event)
+      def notFound() = sender() ! TicketSeller.Tickets(event)
       def buy(child : ActorRef) = {
-        child.forward(Buy(tickets)) // we use the forward so the response will go to parent, so response will go to  rest API
+        child.forward(TicketSeller.Buy(tickets)) // we use the forward so the response will go to parent, so response will go to  rest API
       }
       context.child(event).fold(notFound())(buy)
     }
@@ -65,6 +65,17 @@ class BoxOffice extends Actor{
       }
       pipe(convertToEvents(Future.sequence(getEvents))).to(sender())
     }
+
+    case GetEvent(eventname) => {
+      def notFound = sender() ! None
+      def getEvent(child : ActorRef) = child forward TicketSeller.GetEvent
+      context.child(eventname).fold(notFound)(getEvent)
+    }
+
+    case CancelEvent(event) => {
+      def notFound() = sender() ! None
+      def cancelEvent(child : ActorRef) = child forward TicketSeller.Cancel
+    }
   }
 
 
@@ -75,8 +86,6 @@ object BoxOffice{
 
   def props(implicit timeout : Timeout) = Props(new BoxOffice)
   def name = "BoxOffice"
-
-
   case class CreateEvent(name: String, tickets: Int) //message to create an event
   case class GetEvent(name: String) //message to get an event
   case object GetEvents //message to get all events

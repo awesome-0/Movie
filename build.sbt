@@ -13,6 +13,6 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-http-core" % "10.1.3",
   "com.typesafe.akka" %% "akka-slf4j"      % "2.4.11",
   "com.typesafe.akka" %% "akka-http-spray-json-experimental"  % "2.4.11",
-  "com.typesafe.akka" %% "akka-slf4j"      % "2.4.11",
-  "com.typesafe.akka" %% "akka-http-spray-json-experimental"  % "2.4.11"
+  "com.typesafe.akka" %% "akka-slf4j"      % "2.4.11"
+
 )
