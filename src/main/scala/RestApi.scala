@@ -59,6 +59,8 @@ trait RestRoutes extends BoxOfficeApi
     }
   }
 
+
+
  def addEvent =
    path("events" / Segment){
      event => {
@@ -73,9 +75,23 @@ trait RestRoutes extends BoxOfficeApi
              }
            }
          }
+     } ~
+       get {
+         onSuccess(getEvent(event)) {
+           case Some(evnt) => complete(OK,evnt)
+           case None => complete("hello")
+         }
+      } ~
+       delete {
+         onSuccess(cancelEvent(event)) {
+           case Some(evnt) => complete(OK,evnt)
+           case None => complete("hello")
+         }
        }
      }
  }
+
+
   /*
 
 

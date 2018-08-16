@@ -13,7 +13,7 @@ class BoxOffice extends Actor{
   import akka.util.Timeout
   implicit val timeout = Timeout(5.toLong,TimeUnit.SECONDS)
 
-  def createTicketSeller(event : String) = context.actorOf(TicketSeller.props(event))
+  def createTicketSeller(event : String) = context.actorOf(TicketSeller.props(event),event)
 
   def receive = {
     case CreateEvent(name,ticks) => {
@@ -67,14 +67,21 @@ class BoxOffice extends Actor{
     }
 
     case GetEvent(eventname) => {
-      def notFound = sender() ! None
-      def getEvent(child : ActorRef) = child forward TicketSeller.GetEvent
-      context.child(eventname).fold(notFound)(getEvent)
+      def notFound =  sender() ! None
+      def getEvent(child : ActorRef) = child forward  TicketSeller.GetEvent
+//      context.child(eventname) match {
+//        case Some(ticketer) => sender () ! (ticketer ! TicketSeller.GetEvent)
+//        case None =>  sender() ! None
+//      }
+//      println(sender())
+//      println(self)
+      context.child(eventname).fold(notFound)(child => getEvent(child))
     }
 
     case CancelEvent(event) => {
       def notFound() = sender() ! None
       def cancelEvent(child : ActorRef) = child forward TicketSeller.Cancel
+      context.child(event).fold(notFound)(cancelEvent)
     }
   }
 
