@@ -1,4 +1,5 @@
 import BoxOffice.Events
+import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport
 import spray.json.{DefaultJsonProtocol, RootJsonFormat}
 
 case class EventDescription(tickets: Int) {
@@ -11,7 +12,7 @@ case class TicketRequest(tickets: Int) {
 
 case class Error(message: String)
 
-trait EventMarshalling extends DefaultJsonProtocol {
+trait EventMarshalling extends DefaultJsonProtocol with SprayJsonSupport {
   import BoxOffice._
  // import spray.json.DefaultJsonProtocol._
 

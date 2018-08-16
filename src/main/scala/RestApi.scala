@@ -6,6 +6,7 @@ import akka.pattern.{ask, pipe}
 import akka.http.scaladsl.model._
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server._
+import akka.http.scaladsl.marshalling._
 import spray.json.RootJsonFormat
 //import spray.json.DefaultJsonProtocol
 import spray.json.DefaultJsonProtocol._
