@@ -69,12 +69,6 @@ class BoxOffice extends Actor{
     case GetEvent(eventname) => {
       def notFound =  sender() ! None
       def getEvent(child : ActorRef) = child forward  TicketSeller.GetEvent
-//      context.child(eventname) match {
-//        case Some(ticketer) => sender () ! (ticketer ! TicketSeller.GetEvent)
-//        case None =>  sender() ! None
-//      }
-//      println(sender())
-//      println(self)
       context.child(eventname).fold(notFound)(child => getEvent(child))
     }
 

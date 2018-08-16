@@ -10,12 +10,13 @@ class TicketSeller(event : String) extends Actor{
 
     case Add(newTickets) => tickets = tickets ++ newTickets
     case Buy(nrTickets) => {
-      //here we take tickets out of our ticket vector, if there are enough, we respond with the event and tickets
+      //there we take tickets out of our ticket vector, if there are enough, we respond with the event and tickets
       //if the tickets are not enough we juts respond with a empty tickets
       val ticks = tickets.take(nrTickets).toVector
       if(nrTickets <= ticks.size) {
+       tickets = tickets.drop(nrTickets)
         sender() ! Tickets(event,ticks)
-        tickets.drop(nrTickets)
+
       }else sender() ! Tickets(event)
     }
     case GetEvent => sender() ! Some(Event(event,tickets.size))

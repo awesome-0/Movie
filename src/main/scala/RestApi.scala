@@ -28,27 +28,8 @@ trait RestRoutes extends BoxOfficeApi
   with EventMarshalling{
   import StatusCodes._
 
-  def routes: Route = eventsRoute ~ addEvent
-  // implicit val eventMarshall: RootJsonFormat[Events] = jsonFormat1(BoxOffice.Events)
+  def routes: Route = eventsRoute ~ addEvent ~ ticketsRoute
 
-//  def eventsRoute = {
-//    pathPrefix("events"){
-//      pathEndOrSingleSlash{
-//        get{
-//          //corresponds to GET /events
-//          onSuccess(getEvents()){
-///           events => {
-//           // case Som
-//            //complete(HttpResponse(StatusCodes.OK,entity = HttpEntity(ContentTypes.`application/json`,events)))
-//              complete(events)
-//            case events => complete(events)
-//            case _ => complete(StatusCodes.NotFound)
-//
-//          }
-//          }
-//        }
-//      }
-//    }
 
   def eventsRoute = get {
       path("events") {
@@ -90,6 +71,27 @@ trait RestRoutes extends BoxOfficeApi
        }
      }
  }
+
+  def ticketsRoute = path("events" / Segment / "tickets"){
+    event => {
+      post{
+        entity(as[TicketRequest]){
+          tR => {
+            onSuccess(requestTickets(event,tR.tickets)) {
+              ticks => {
+                if(ticks.entries.isEmpty) complete(NotFound) else complete(OK,ticks)
+              }
+//             ticks => {
+//               if(ticks.get.entries.isEmpty) complete
+//              case ticks => {
+//                if(ticks.entries.isEmpty) complete(NotFound) else (complete(OK,Ticket(ticks.entries.size)))
+             }
+            }
+          }
+        }
+      }
+    }
+
 
 
   /*
@@ -174,7 +176,7 @@ trait BoxOfficeApi{
   }
 
   def requestTickets(event : String, nrTickets : Int) = {
-    (boxOffice ? GetTicketsforEvent(event,nrTickets)).mapTo[Option[TicketSeller.Tickets]]
+    (boxOffice ? GetTicketsforEvent(event,nrTickets)).mapTo[TicketSeller.Tickets]
   }
 
 
