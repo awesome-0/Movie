@@ -26,8 +26,9 @@ class RestApi (system: ActorSystem, timeout: Timeout) extends RestRoutes {
 
 trait RestRoutes extends BoxOfficeApi
   with EventMarshalling{
+  import StatusCodes._
 
-  def routes: Route = eventsRoute
+  def routes: Route = eventsRoute ~ addEvent
   // implicit val eventMarshall: RootJsonFormat[Events] = jsonFormat1(BoxOffice.Events)
 
 //  def eventsRoute = {
@@ -52,24 +53,31 @@ trait RestRoutes extends BoxOfficeApi
   def eventsRoute = get {
       path("events") {
       onSuccess(getEvents()){
-        case events => complete(events)
-        case _ => complete(StatusCodes.NotFound)
+        case events : Events => complete(events)
+        case _ => complete(NotFound)
       }
     }
   }
 
+ def addEvent =
+   path("events" / Segment){
+     event => {
+       post {
+         entity(as[EventDescription])  {
+           ed => {
+             onSuccess(createEvent(event,ed.tickets)) {
+               case EventCreated(e) => complete(OK,e)
+               case EventExists =>
+                 val err = Error(s"$event event already exists")
+                 complete(BadRequest,err)
+             }
+           }
+         }
+       }
+     }
+ }
   /*
-  def eventsRoute =
-    pathPrefix("events") {
-      pathEndOrSingleSlash {
-        get {
-          // GET /events
-          onSuccess(getEvents()) { events =>
-            complete(OK, events)
-          }
-        }
-      }
-    }
+
 
   def eventRoute =
     pathPrefix("events" / Segment) { event =>
@@ -122,6 +130,7 @@ trait RestRoutes extends BoxOfficeApi
 }
 
 trait BoxOfficeApi{
+
 
   def createBoxOffice() : ActorRef
 

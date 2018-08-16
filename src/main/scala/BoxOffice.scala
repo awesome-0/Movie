@@ -26,7 +26,7 @@ class BoxOffice extends Actor{
         }.toVector
 
         ticketSeller ! TicketSeller.Add(tickets)
-        sender() ! EventCreated
+        sender() ! EventCreated(Event(name,ticks))
       }
       /*
 
@@ -43,7 +43,7 @@ class BoxOffice extends Actor{
   }
        */
 
-      context.child(name).fold(create()){_ => sender() ! EventExists}
+      context.child(name).fold(create()){ _ => sender() ! EventExists}
     }
 
     case GetTicketsforEvent(event,tickets) => {
